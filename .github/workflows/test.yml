@@ -1,7 +1,7 @@
 name: testing-copy-files
 on:
   push: 
-    branches: [ myfirstrepo ]
+    branches: [ master ]
 jobs:
   copy:
     runs-on: ubuntu-latest
