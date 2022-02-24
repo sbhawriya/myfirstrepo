@@ -1,0 +1,15 @@
+name: testing-copy-files
+on:
+  push: 
+    branches: [ myfirstrepo ]
+jobs:
+  copy:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    - name: "Login to DMP AWS guest docker"
+      run: |
+          touch newfile123
+          ls -ld newfile123
+  
+  
