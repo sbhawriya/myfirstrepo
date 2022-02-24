@@ -14,6 +14,7 @@ jobs:
   #    - name: Setup tmate session
   #      uses: mxschmitt/action-tmate@v3
   print:
+    needs: copy 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,4 +23,3 @@ jobs:
           mv test.txt test.txt123
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-          

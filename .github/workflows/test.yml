@@ -11,14 +11,24 @@ jobs:
         run: |
           touch newfile123
           ls -ld newfile123
+      - uses: actions/upload-artifact@master
+        with:
+          name: need-to-keep
+          path: |
+            /home/runner/work/myfirstrepo/myfirstrepo/newfile123
   #    - name: Setup tmate session
   #      uses: mxschmitt/action-tmate@v3
   print:
+    needs: copy 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: "printing the files"
         run: |
           mv test.txt test.txt123
+      - name: Download Artifact from Previous job
+        uses: actions/download-artifact@v2
+        with:
+          name: need-to-keep
       - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+        uses: mxschmitt/action-tmate@v3  
