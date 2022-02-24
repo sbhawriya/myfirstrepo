@@ -7,7 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "Login to DMP AWS guest docker"
+      - name: "create a new file"
         run: |
           touch newfile123
           ls -ld newfile123
+  #    - name: Setup tmate session
+  #      uses: mxschmitt/action-tmate@v3
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "printing the files"
+        run: |
+          mv test.txt test.txt123
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+          
