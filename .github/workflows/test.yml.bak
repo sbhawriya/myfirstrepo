@@ -9,8 +9,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: "create a new file"
         run: |
-          touch ${{ secrets.TEST_SECRET }}
-          ls -ld ${{ secrets.TEST_SECRET }}
+          touch {{ secrets.TEST_SECRET }}
+          ls -ld {{ secrets.TEST_SECRET }}
       - uses: actions/upload-artifact@master
         with:
           name: need-to-keep
