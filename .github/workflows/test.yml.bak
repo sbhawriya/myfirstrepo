@@ -14,7 +14,7 @@ jobs:
         run: |
           touch ${{ secrets.TEST_SECRET }}
           ls -ld ${{ secrets.TEST_SECRET }}
-          sh -x mgm_var.sh
+          sh -x scripts/mgm_var.sh
       - uses: actions/upload-artifact@master
         with:
           name: need-to-keep
