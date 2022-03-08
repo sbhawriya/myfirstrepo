@@ -2,6 +2,9 @@ name: testing-copy-files
 on:
   push: 
     branches: [ master ]
+    
+env:
+  mgm_secret: ${{ secrets.TEST_SECRET }} 
 jobs:
   copy:
     runs-on: ubuntu-latest
@@ -11,6 +14,7 @@ jobs:
         run: |
           touch ${{ secrets.TEST_SECRET }}
           ls -ld ${{ secrets.TEST_SECRET }}
+          sh -x scripts/mgm_var.sh
       - uses: actions/upload-artifact@master
         with:
           name: need-to-keep
